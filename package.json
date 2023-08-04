@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --mode development --port 3000 --open",
-    "build": "node_options='--openssl-legacy-provider' webpack --mode development --verbose --colors --display-error-details",
+    "build": "webpack --mode development --verbose --colors --display-error-details",
     "deploy": "node deploy-to-github.js"
   },
   "repository": {
