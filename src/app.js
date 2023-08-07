@@ -21,7 +21,8 @@ let valores = [
   "K",
   "Q"
 ];
-let colores = ["red", "black"];
+let red = "red";
+let black = "black";
 window.onload = function() {
   const upperEmojiDiv = document.getElementById("upperEmoji");
   const bottomEmojiDiv = document.getElementById("bottomEmoji");
@@ -29,17 +30,18 @@ window.onload = function() {
   // emoji aleatorio
   const randomIndex = Math.floor(Math.random() * emojis.length);
   const selectedEmoji = emojis[randomIndex];
-  //color aleatorio
-  const colorRandom = Math.floor(Math.random() * colores.length);
-  const selectedColor = colores[colorRandom];
   // número aleatorio
   const randomIndexValue = Math.floor(Math.random() * valores.length);
   const selectedValue = valores[randomIndexValue];
   // Agregando contenido y estilos a los divs
   upperEmojiDiv.textContent = selectedEmoji;
   bottomEmojiDiv.textContent = selectedEmoji;
-  upperEmojiDiv.style.color = selectedColor;
-  bottomEmojiDiv.style.color = selectedColor;
-  numLetDiv.style.color = selectedColor;
+  if (selectedEmoji == "♦" || selectedEmoji == "♥") {
+    upperEmojiDiv.style.color = red;
+    bottomEmojiDiv.style.color = red;
+  } else {
+    upperEmojiDiv.style.color = black;
+    bottomEmojiDiv.style.color = black;
+  }
   numLetDiv.textContent = selectedValue;
 };
